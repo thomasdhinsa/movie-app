@@ -8,9 +8,9 @@ get "a_movie_query/:id" => "for_movies#a_movie_query"
 
 get "in_reverse" => "for_movies#in_reverse"
 
-get "find_by_query/:id" => "for_movies#find_by_query"
+get "find_by_query/:year" => "for_movies#find_by_query"
 
 
-#The second and third pathways work. I'm still messing around with the methods for the fourth and fifth.
+#The second and third pathways work. I'm still messing around with the method for the fourth.
 
 end

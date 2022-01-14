@@ -16,11 +16,11 @@ class ForMoviesController < ApplicationController
   #   render json: movies.as_json
   # end 
 
-  # def find_by_query
-  #   title = params[:title]
-  #   movie = Movie.find_by(title: title)
-  #   render json: movie.as_json
-  # end 
+   def find_by_query
+     year = params[:year].to_i
+     movie = Movie.find_by(year: year)
+     render json: movie
+   end 
 
 
   #
