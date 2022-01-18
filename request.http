@@ -1,20 +1,80 @@
-get http://localhost:3000/a_movie_query/2
+##START MOVIES PATHING
+#index
+Get http://localhost:3000/movies
 
 ###
+#show
+Get http://localhost:3000/movies/3
 
-POST http://localhost:3000/actor_by_body
+###
+#create
+POST http://localhost:3000/movies
 Content-Type: application/json
 
 {
-  "name": "Tony"
+
+   "title": "Blade",
+   "year": "1998",
+   "plot": "In the film, Blade is a Dhampir, a human with vampire strengths but not their weaknesses, who together with his mentor Abraham Whistler and hematologist Karen Jenson, fights against vampires, namely the exceptionally vicious Deacon Frost."
+
 }
 
 ###
+#update
 
-GET http://localhost:3000/actor_query/5
+Patch http://localhost:3000/movies/4
+Content-Type: application/json
+
+{
+  
+  "title": "Toy_Story",
+  "year": "1995",
+  "plot": "Taking place in a world where toys come to life when humans are not present, the plot focuses on the relationship between an old-fashioned pull-string cowboy doll named Woody and a modern astronaut action figure, Buzz Lightyear."
+
+}
+
+###
+#delete
+DELETE http://localhost:3000/movies/4
+
+###
+#START ACTORS PATHING
+#create
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+
+  "first_name": "Wesley",
+  "last_name": "Snipes",
+  "known_for": "Blade"
+
+}
 
 
 ###
+#show
+GET http://localhost:3000/actors/5
+
+###
+#index
+GET http://localhost:3000/actors 
 
 
-GET http://localhost:3000/actor_by_url/5 
+###
+#update
+
+PATCH http://localhost:3000/actors/8
+Content-Type: application/json
+
+{
+
+"first_name": "Robert",
+"last_name": "Downy, J.R.",
+"known_for": "Iron Man"
+
+}
+
+###
+#destroy
+DELETE http://localhost:3000/actors/10

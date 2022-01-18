@@ -1,28 +1,39 @@
 class ActorsController < ApplicationController
 
-  def actor_query
+  def show
   id = params[:id].to_i
   actor = Actor.find_by(id: id)
   render json: actor
  
   end
 
-
-
-  def actor_by_url
-    id = params[:id].to_i
-    actor = Actor.find_by(id: id)
-    render json: actor.as_json
+  def index
+    actors = Actor.all
+    render json: actors 
   end 
 
-
-  def actor_by_body
-    actor = params[:name]
-    render json: {
-      message: actor
-    }
+  def update
+    actor = Actor.find(params[:id])
+    actor.first_name = params[:first_name] || actor.first_name
+    actor.last_name = params[:last_name] || actor.last_name
+    actor.known_for = params[:known_for] || actor.known_for
+    actor.save
+    render json: actor
   end 
 
+  def create
+   actor = Actor.new(
+    first_name: params[:first_name], 
+    last_name: params[:last_name],
+    known_for: params[:known_for]
+    )
+   actor.save
+   render json: actor
+  end 
 
-
+  def destroy
+    actor = Actor.find(params[:id])
+    actor.delete
+    render json: {message: "Your actor is deleted"}
+  end
 end 
