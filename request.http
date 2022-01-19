@@ -51,7 +51,9 @@ Content-Type: application/json
 
   "first_name": "Wesley",
   "last_name": "Snipes",
-  "known_for": "Blade"
+  "known_for": "Blade",
+  "gender": "male",
+  "age": 59
 
 }
 
@@ -68,14 +70,16 @@ GET http://localhost:3000/actors
 ###
 #update
 
-PATCH http://localhost:3000/actors/8
+PATCH http://localhost:3000/actors/11
 Content-Type: application/json
 
 {
 
 "first_name": "Robert",
 "last_name": "Downy, J.R.",
-"known_for": "Iron Man"
+"known_for": "Iron Man",
+"gender": "male",
+"age": 56
 
 }
 
