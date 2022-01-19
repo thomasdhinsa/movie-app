@@ -15,21 +15,25 @@ Content-Type: application/json
 
    "title": "Blade",
    "year": "1998",
-   "plot": "In the film, Blade is a Dhampir, a human with vampire strengths but not their weaknesses, who together with his mentor Abraham Whistler and hematologist Karen Jenson, fights against vampires, namely the exceptionally vicious Deacon Frost."
+   "plot": "In the film, Blade is a Dhampir, a human with vampire strengths but not their weaknesses, who together with his mentor Abraham Whistler and hematologist Karen Jenson, fights against vampires, namely the exceptionally vicious Deacon Frost.",
+   "director": "Stephen Norrington",
+   "english": true
 
 }
 
 ###
 #update
 
-Patch http://localhost:3000/movies/4
+Patch http://localhost:3000/movies/5
 Content-Type: application/json
 
 {
   
   "title": "Toy_Story",
   "year": "1995",
-  "plot": "Taking place in a world where toys come to life when humans are not present, the plot focuses on the relationship between an old-fashioned pull-string cowboy doll named Woody and a modern astronaut action figure, Buzz Lightyear."
+  "plot": "Taking place in a world where toys come to life when humans are not present, the plot focuses on the relationship between an old-fashioned pull-string cowboy doll named Woody and a modern astronaut action figure, Buzz Lightyear.",
+  "director": "John Lasseter",
+  "english": true
 
 }
 
