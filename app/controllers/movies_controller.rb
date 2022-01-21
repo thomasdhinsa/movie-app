@@ -19,8 +19,11 @@ class MoviesController < ApplicationController
        director: params[:director],
        english: params[:english]
      )
-     movie.save
-     render json: movie
+     if movie.save
+       render json: movie
+     else 
+      render json: {errors: movie.errors.full_messages}, status: :patial_content
+     end 
   end 
 
   def update
@@ -30,8 +33,11 @@ class MoviesController < ApplicationController
      movie.plot = params[:plot] || movie.plot
      movie.director = params[:director] || movie.director
      movie.english = params[:english] || movie.english
-     movie.save
-     render json: movie
+     if movie.save
+       render json: movie
+     else 
+      render json: {errors: movie.errors.full_messages}, status: :unprocessable_entity
+     end 
   end
 
   def destroy 
