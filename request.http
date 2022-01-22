@@ -24,22 +24,22 @@ Content-Type: application/json
 ###
 #update
 
-Patch http://localhost:3000/movies/5
+Patch http://localhost:3000/movies/1
 Content-Type: application/json
 
 {
   
-  "title": "Toy_Story",
-  "year": "1995",
-  "plot": "Taking place in a world where toys come to life when humans are not present, the plot focuses on the relationship between an old-fashioned pull-string cowboy doll named Woody and a modern astronaut action figure, Buzz Lightyear.",
-  "director": "John Lasseter",
+  "title": "The_Matrix",
+  "year": "1999",
+  "plot": "depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, the Matrix, which intelligent machines have created to distract humans while using their bodies as an energy source.",
+  "director": "The Wichowskis",
   "english": true
 
 }
 
 ###
 #delete
-DELETE http://localhost:3000/movies/4
+DELETE http://localhost:3000/movies/2
 
 ###
 #START ACTORS PATHING
@@ -70,16 +70,16 @@ GET http://localhost:3000/actors
 ###
 #update
 
-PATCH http://localhost:3000/actors/11
+PATCH http://localhost:3000/actors/5
 Content-Type: application/json
 
 {
 
-"first_name": "Robert",
-"last_name": "Downy, J.R.",
-"known_for": "Iron Man",
-"gender": "male",
-"age": 56
+"first_name": "Tony",
+"last_name": "Jaa",
+"known_for": "Ong_Bak",
+"gender": "Male",
+"age": 45
 
 }
 
