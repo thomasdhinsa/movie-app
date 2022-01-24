@@ -53,7 +53,8 @@ Content-Type: application/json
   "last_name": "Snipes",
   "known_for": "Blade",
   "gender": "male",
-  "age": 59
+  "age": 59,
+  "movie_id": 7
 
 }
 
@@ -79,7 +80,8 @@ Content-Type: application/json
 "last_name": "Jaa",
 "known_for": "Ong_Bak",
 "gender": "Male",
-"age": 45
+"age": 45,
+"movie_id": 3
 
 }
 
