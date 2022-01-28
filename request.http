@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDM0MzAxMjh9.LIofWgB0eGsh23OWHxHWqLwQiOad8rUmi8Emb4ylhEE
+
 ##START MOVIES PATHING
 #index
 Get http://localhost:3000/movies
@@ -10,6 +12,7 @@ Get http://localhost:3000/movies/3
 #create
 POST http://localhost:3000/movies
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
 
@@ -26,6 +29,7 @@ Content-Type: application/json
 
 Patch http://localhost:3000/movies/1
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
   
@@ -41,11 +45,13 @@ Content-Type: application/json
 #delete
 DELETE http://localhost:3000/movies/2
 
+
 ###
 #START ACTORS PATHING
 #create
 POST http://localhost:3000/actors
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
 
@@ -73,6 +79,7 @@ GET http://localhost:3000/actors
 
 PATCH http://localhost:3000/actors/5
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
 
@@ -88,3 +95,28 @@ Content-Type: application/json
 ###
 #destroy
 DELETE http://localhost:3000/actors/10
+
+
+###USERS 
+#Create user (sign_up)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name":"Tom",
+  "email":"Tom@gmail.com",
+  "password":"password",
+  "password_confirmation":"password",
+  "admin": true
+}
+
+###SESSIONS
+#Create session (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+
+{
+  "email": "Tom@gmail.com",
+  "password": "password"
+}

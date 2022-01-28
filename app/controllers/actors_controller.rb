@@ -1,4 +1,6 @@
 class ActorsController < ApplicationController
+  before_action :authenticate_user 
+  before_action :authenticate_admin, except: [:index, :show]
 
   def show
   id = params[:id].to_i
