@@ -34,6 +34,13 @@ post "sessions" => "sessions#create"
 
 
 
+###
+#Start movie_genres create
+post "movie_genres" => "movie_genres#create"
+get "movie_genres" => "movie_genres#index"
+
+
+
 
 
 end
